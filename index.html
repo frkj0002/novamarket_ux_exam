@@ -7,6 +7,7 @@
     <title>Home | Nova Market</title>
     <link rel="stylesheet" href="css/products.css">
     <script src="js/products.js" type="module" defer></script>
+    <script src="js/categories.js" type="module" defer></script>
     <script src="js/loginLogout.js" type="module" defer></script>
     <script src="js/logout.js" type="module" defer></script>
 </head>
@@ -72,20 +73,20 @@
         <header id="heroSection">
             <h1>Products</h1>
         </header>
-        <section id="productList">
-            <template id="productCard">
-                <article>
-                    <a href="" target="_self">
-                        <img src="" alt="">
-                    </a>
-                    <header>
-                        <h2 class="productTitle"><a href="" target="_self" class="titleLink"></a></h2>
-                        <p class="productCategory"></p>
-                    </header>
-                    <p class="productPrice"></p>
-                </article>
-            </template>
-        </section>
+        <section id="productList"></section>
+        <template id="productCard">
+            <article>
+                <a href="" target="_self">
+                    <img src="" alt="">
+                </a>
+                <header>
+                    <h2 class="productTitle"><a href="" target="_self" class="titleLink"></a></h2>
+                    <p class="productCategory"></p>
+                </header>
+                <p class="productPrice"></p>
+            </article>
+        </template>
+
     </main>
     <footer>
         <section id="paymentOptions">
