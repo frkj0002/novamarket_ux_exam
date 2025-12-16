@@ -1,42 +1,70 @@
-import { BASE_URL } from "./info.js";
+import { BASE_URL } from './info.js';
 
-const assignLink = (anchor, url, text) => {
-    anchor.href = url; //Sets where the link goes
-    anchor.title = text; //Sets a hover text
+const categories = {
+    'women': "women's clothing",
+    'men': "men's clothing",
+    'jewelery': "jewelery",
+    'electronics': "electronics"
 };
 
-const fragment = document.createDocumentFragment();
-    await fetch(`${BASE_URL}`)
-    .then(response => response.json())
-    .then(data => {
-        console.log(data);
-        data.forEach(item => {
-            const productCard = document.querySelector('#productCard').content.cloneNode(true);
+const productList = document.querySelector('#productList');
 
-            const linkURL = `product.htm?id=${item.id}`;
-            const imageLink = productCard.querySelector('a:has(img)');
-            // Gives the link the correct tooltip text and correct destination
-            assignLink(imageLink, linkURL, item.title);
+const assignLink = (anchor, url, text) => {
+    anchor.href = url;
+    anchor.title = text;
+};
 
-            const headerLink = productCard.querySelector('h2 > a');
-            headerLink.innerText = item.title;
-            assignLink(headerLink, linkURL, item.title);
+export const queryProducts = (categoryId) => {
+    let url = BASE_URL;
 
-            const image = productCard.querySelector('article > a > img');
-            image.setAttribute('src', item.image);
-            image.setAttribute('alt', item.title);
+    if(categoryId && categoryId !== 'products') {
+        const catName = categories[categoryId];
+        if(catName) {
+            url = `${BASE_URL}/category/${encodeURIComponent(catName)}`;
+        }
+    }
 
-            productCard.querySelector('.productTitle').textContent = item.title;
-            productCard.querySelector('.productCategory').textContent = item.category;
-            productCard.querySelector('.productPrice').textContent = item.price + " USD";
-
-            fragment.appendChild(productCard);
+    fetch(url)
+        .then(response => {
+            if(response.ok) {
+                return response.json();
+            } else {
+                console.error(`Response error: ${response.status} - ${response.statusText}`);
+            }
         })
-    })
-    .catch(error => console.log(error));
-document.querySelector('#productList').appendChild(fragment);
+        .then(data => {
+            if(data) showProducts(data);
+        })
+        .catch(err => console.error(err));
+};
 
-// fetchProducts();
 
+const showProducts = (products) => {
+    productList.innerHTML = '';
+    const fragment = document.createDocumentFragment();
 
+    products.forEach(product => {
+        const productCard = document.querySelector('#productCard').content.cloneNode(true);
 
+        const linkURL = `product.htm?id=${product.id}`;
+
+        const imageLink = productCard.querySelector('a:has(img)');
+        assignLink(imageLink, linkURL, product.title);
+
+        const headerLink = productCard.querySelector('h2 > a');
+        headerLink.innerText = product.title;
+        assignLink(headerLink, linkURL, product.title);
+
+        const image = productCard.querySelector('article > a > img');
+        image.setAttribute('src', product.image);
+        image.setAttribute('alt', product.title);
+
+        productCard.querySelector('.productTitle').textContent = product.title;
+        productCard.querySelector('.productCategory').textContent = product.category;
+        productCard.querySelector('.productPrice').textContent = product.price + ' USD';
+
+        fragment.appendChild(productCard);
+    });
+
+    productList.appendChild(fragment);
+};
