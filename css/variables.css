@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    /* Fonts */
+    --fontMain: system-ui, sans-serif;
+    --fontHeader: Poppins, sans-serif;
+
+    /* Colours */
+    --colourBgNav: #120D31;
+    --colourBgBody: #FAFBFF;
+    --colourTxtLight: #FAFBFF;
+    --colourTxtDark: #120D31;
+    --colourLink: #FDF0C8;
+    --colourBlueLink: #3623b0;
+    --colourCategoryTag: #30248B;
+    --colourBgCard: #ECF0FF;
+    --colourBoxShadow: #13131C1E;
+    --colourCTA: #F6B429;
+
+    /* Sizes */
+    --widthPaymentIcons: 45px;
+    --widthSomeIcons: 35px;
+    --heroImgMaxHeight: 250px;
+    --maxWidth: 1300px;
+}

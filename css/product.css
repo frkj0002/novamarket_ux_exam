@@ -1,0 +1,83 @@
+@import 'styles.css';
+
+:root {
+    --productImageDimensions: 200px;
+    --productImageDimensionsTablet: 250px;
+    --starIconDimensions: 20px;
+    --maxWidthInfoSection: 550px;
+}
+
+main {
+    header#heroSection {
+        h1 {
+            font-family: var(--fontHeader);
+            font-size: clamp(1.5rem, 5vw, 2.2rem);
+        }
+    }
+    section#productInfo {
+        display: flex;
+        flex-direction: column;
+        padding: 2rem;
+        gap: 2rem;
+        margin: 0 auto;
+        
+        @media (min-width: 800px) {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 5rem;
+        }
+        
+        img {
+            width: var(--productImageDimensions);
+            align-self: center;
+
+            @media (min-width: 800px) {
+                width: var(--productImageDimensionsTablet);
+            }
+
+        }
+        section {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            max-width: var(--maxWidthInfoSection);
+
+            @media (min-width: 800px) {
+                justify-content: space-between;
+            }
+
+            div#productDescription {
+                display: flex;
+                flex-direction: column;
+                gap: 0.4rem;
+                h2 {
+                    font-family: var(--fontHeader);
+                    font-size: 1.4rem;
+                }
+            }
+            div#productRating {
+                display: flex;
+                gap: 0.6rem;
+                align-items: center;
+                div {
+                    display: flex;
+                    gap: 0.3rem;
+                    img {
+                        width: var(--starIconDimensions);
+                    }
+                }
+            }
+            #rate, #count, #productPrice > p {
+                font-weight: 600;
+            }
+            #productPrice > p {
+                font-size: 1.3rem;
+            }
+        }
+    }
+    button {
+        font-size: 1.3rem;
+        padding: 0.8rem 0;
+    }
+}

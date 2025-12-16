@@ -1,0 +1,89 @@
+@import 'styles.css';
+
+:root {
+    --cardImageDimensions: 150px;
+}
+
+main {
+    header#heroSection {
+        background-image: url("/images/products_bg_image.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 7rem 0;
+        background-color: rgba(0,0,0,0.5);
+        background-blend-mode: darken;
+        > h1 {
+            font-family: var(--fontHeader);
+            color: var(--colourTxtLight);
+            text-align: center;
+            text-transform: uppercase;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+        }
+        @media (min-width: 768px) {
+            max-height: var(--heroImgMaxHeight);
+        }
+        @media (min-width: 1500px) {
+
+        }
+    }
+
+    section#productList {
+        padding: 1rem 2rem;
+        display: grid;
+        gap: 1rem;
+        max-width: var(--maxWidth);
+        margin: 0 auto;
+        @media (min-width: 500px) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @media (min-width: 800px) {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+        @media (min-width: 1024px) {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        article {
+            /* background-color: var(--colourBgCard); */
+            padding: 1rem;
+            border-radius: 0.6rem;
+            word-break: break-word;
+            box-shadow: 2px 2px 2px 2px var(--colourBoxShadow);
+            a {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                img {
+                    width: var(--cardImageDimensions);
+                    height: auto;
+                }
+            }
+            @media (min-width: 500px) {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                
+            }
+            header {
+                padding-bottom: 1.2rem;
+                display: flex;
+                flex-direction: column;
+                gap: 0.3rem;
+               h2 {
+                    text-decoration: none;
+                    color: var(--colourTxtDark);
+                    font-family: var(--fontHeader);
+                } 
+                
+            }
+            .productPrice {
+                font-family: var(--fontMain);
+                font-weight: 600;
+            }
+        } 
+    }
+}
+

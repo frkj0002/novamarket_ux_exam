@@ -1,0 +1,34 @@
+{
+  "users": [
+    {
+      "id": "f057",
+      "email": "a@a.com",
+      "password": "Password1."
+    },
+    {
+      "id": "cc34",
+      "email": "a@b.com",
+      "password": "Password12!"
+    },
+    {
+      "id": "0abf",
+      "email": "fkj@gmail.com",
+      "password": "Hejsa123."
+    },
+    {
+      "id": "7cfe",
+      "email": "hej@hej.dk",
+      "password": "Hello12!"
+    },
+    {
+      "id": "df7c",
+      "email": "h@h.dk",
+      "password": "Passpass2!"
+    },
+    {
+      "id": "a2d8",
+      "email": "k@k.com",
+      "password": "okok"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+@import 'styles.css';
+@import '_form.css';
+
+main {
+    padding: 1rem 2rem;
+    header > h1 {
+        font-family: var(--fontHeader);
+    }
+    #frmCheckOut {
+        fieldset {
+            border: none;
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+
+            legend {
+                font-family: var(--fontHeader);
+                font-weight: 600;
+                font-size: 1.2rem;
+            }
+        }
+        #btnConfirmOrder {
+            padding: 0.8rem;
+            font-size: clamp(1rem, 5vw, 1.3rem);
+            width: fit-content;
+        }
+    }
+}

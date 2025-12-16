@@ -1,0 +1,95 @@
+@import 'styles.css';
+
+:root {
+    --smallImageDimensions: 60px;
+    --largeImageDimensions: 80px;
+    --maxWidthProductNameSmall: 150px;
+    --maxWidthProductNameMedium: 320px;
+    --maxWidthProductNameLarge: 850px;
+}
+
+main {
+    #orderOverview {
+        padding: 1rem 2rem;
+        max-width: var(--maxWidth);
+        margin: 0 auto;
+        @media(min-width: 768px) {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+        #cartOverview {
+            header > h2 {
+                font-family: var(--fontMain);
+            }
+            #cartList {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                margin-bottom: 2rem;
+            }
+            article {
+                display: flex;
+                flex-direction: row;
+                gap: 1.5rem;
+                box-shadow: 2px 2px 2px 2px var(--colourBoxShadow);
+                border-radius: 0.6rem;
+                padding: 0.5rem;
+
+                img {
+                    width: var(--smallImageDimensions);
+                    object-fit: contain;
+
+                    @media (min-width: 1024px) {
+                        width: var(--largeImageDimensions);
+                    }
+                }
+
+                div {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.5rem;
+                    .productName {
+                        font-family: var(--fontHeader);
+                        font-size: clamp(1rem, 5vw, 1.1rem);
+                        color: var(--colourTxtDark);
+                        max-width: var(--maxWidthProductNameSmall);
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        white-space: nowrap;
+
+                        @media (min-width: 500px) {
+                            max-width: var(--maxWidthProductNameMedium);
+                        }
+                        @media (min-width: 1200px) {
+                            max-width: var(--maxWidthProductNameLarge);
+                        }
+                    }
+                    #btnRemoveFromCart {
+                        font-size: clamp(0.8rem, 5vw, 1rem);
+                        padding: 0.2rem 0.4rem;
+                    }
+                }
+            }
+        } 
+        #orderTotalPrice {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            header > h3 {
+                font-family: var(--fontMain);
+                color: var(--colourTxtDark);
+            }
+            nav {
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+                a {
+                    text-decoration: none;
+                    padding: 0.8rem;
+                    width: fit-content;
+                }
+            }
+        } 
+    }
+}

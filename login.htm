@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Nova Market</title>
+    <link rel="stylesheet" href="css/signup.css">
+    <script src="js/login.js" type="module" defer></script>
+</head>
+
+<body>
+    <header id="header">
+        <nav>
+            <a href="index.html" title="Home"><img src="images/nova_market_logo.svg" alt="Nova Market logo"></a>
+            <ul id="mainNavigation" aria-label="Main navigation">
+                <!-- <li id="logo" class="menuItem"><a href="index.html" title="Home">LOGO</a></li> -->
+                <li id="products" class="menuItem"><a href="index.html" title="Products">All Products</a></li>
+                <li id="women" class="menuItem"><a href="index.html" title="Women">Women</a></li>
+                <li id="men" class="menuItem"><a href="index.html" title="Men">Men</a></li>
+                <li id="jewelery" class="menuItem"><a href="index.html" title="Jewelery">Jewelery</a></li>
+                <li id="electronics" class="menuItem"><a href="index.html" title="Electronics">Electronics</a></li>
+            </ul>
+            <ul id="utilityNavigation" aria-label="Utility navigation">
+                <li id="login">
+                    <a href="login.htm" title="Log in">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M11 12.65C12.1669 12.65 13.2861 12.1864 14.1112 11.3613C14.9364 10.5361 15.4 9.41695 15.4 8.25C15.4 7.08305 14.9364 5.96389 14.1112 5.13873C13.2861 4.31357 12.1669 3.85 11 3.85C9.83302 3.85 8.71387 4.31357 7.88871 5.13873C7.06355 5.96389 6.59998 7.08305 6.59998 8.25C6.59998 9.41695 7.06355 10.5361 7.88871 11.3613C8.71387 12.1864 9.83302 12.65 11 12.65ZM11 11.55C11.4333 11.55 11.8625 11.4646 12.2628 11.2988C12.6632 11.133 13.027 10.8899 13.3334 10.5835C13.6399 10.277 13.8829 9.91323 14.0488 9.51285C14.2146 9.11248 14.3 8.68336 14.3 8.25C14.3 7.81664 14.2146 7.38752 14.0488 6.98714C13.8829 6.58677 13.6399 6.22298 13.3334 5.91655C13.027 5.61011 12.6632 5.36704 12.2628 5.2012C11.8625 5.03536 11.4333 4.95 11 4.95C10.1248 4.95 9.28539 5.29768 8.66652 5.91655C8.04765 6.53542 7.69998 7.37478 7.69998 8.25C7.69998 9.12521 8.04765 9.96458 8.66652 10.5835C9.28539 11.2023 10.1248 11.55 11 11.55Z"
+                                fill="#FAFBFF" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M22 11C22 17.0753 17.0753 22 11 22C4.9247 22 0 17.0753 0 11C0 4.9247 4.9247 0 11 0C17.0753 0 22 4.9247 22 11ZM16.2965 19.3655C14.7132 20.3711 12.8756 20.9035 11 20.9C9.07959 20.9035 7.20009 20.3452 5.59295 19.294C5.46095 19.129 5.32712 18.9585 5.19145 18.7825C5.0341 18.5764 4.94922 18.3241 4.95 18.0648C4.95 17.4724 5.3757 16.9757 5.94495 16.8927C9.7097 16.3427 12.3019 16.39 16.0716 16.912C16.3444 16.9519 16.5937 17.089 16.7734 17.2981C16.9532 17.5072 17.0514 17.7741 17.05 18.0499C17.05 18.3139 16.9592 18.5702 16.7953 18.7704C16.6263 18.9761 16.46 19.1745 16.2965 19.3655ZM18.1418 17.8563C18.0538 16.8267 17.2722 15.9676 16.2222 15.8224C12.3635 15.2884 9.66625 15.2372 5.786 15.8043C4.73 15.9583 3.95175 16.8251 3.85935 17.8574C2.08578 16.0155 1.0965 13.557 1.1 11C1.1 5.53245 5.53245 1.1 11 1.1C16.4676 1.1 20.9 5.53245 20.9 11C20.9035 13.5565 19.9147 16.0145 18.1418 17.8563Z"
+                                fill="#FAFBFF" />
+                        </svg>
+                        Log in
+                    </a>
+                </li>
+                <li id="logout" class="hidden">
+                    <button id="btnLogout">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M11 12.65C12.1669 12.65 13.2861 12.1864 14.1112 11.3613C14.9364 10.5361 15.4 9.41695 15.4 8.25C15.4 7.08305 14.9364 5.96389 14.1112 5.13873C13.2861 4.31357 12.1669 3.85 11 3.85C9.83302 3.85 8.71387 4.31357 7.88871 5.13873C7.06355 5.96389 6.59998 7.08305 6.59998 8.25C6.59998 9.41695 7.06355 10.5361 7.88871 11.3613C8.71387 12.1864 9.83302 12.65 11 12.65ZM11 11.55C11.4333 11.55 11.8625 11.4646 12.2628 11.2988C12.6632 11.133 13.027 10.8899 13.3334 10.5835C13.6399 10.277 13.8829 9.91323 14.0488 9.51285C14.2146 9.11248 14.3 8.68336 14.3 8.25C14.3 7.81664 14.2146 7.38752 14.0488 6.98714C13.8829 6.58677 13.6399 6.22298 13.3334 5.91655C13.027 5.61011 12.6632 5.36704 12.2628 5.2012C11.8625 5.03536 11.4333 4.95 11 4.95C10.1248 4.95 9.28539 5.29768 8.66652 5.91655C8.04765 6.53542 7.69998 7.37478 7.69998 8.25C7.69998 9.12521 8.04765 9.96458 8.66652 10.5835C9.28539 11.2023 10.1248 11.55 11 11.55Z"
+                                fill="#FAFBFF" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M22 11C22 17.0753 17.0753 22 11 22C4.9247 22 0 17.0753 0 11C0 4.9247 4.9247 0 11 0C17.0753 0 22 4.9247 22 11ZM16.2965 19.3655C14.7132 20.3711 12.8756 20.9035 11 20.9C9.07959 20.9035 7.20009 20.3452 5.59295 19.294C5.46095 19.129 5.32712 18.9585 5.19145 18.7825C5.0341 18.5764 4.94922 18.3241 4.95 18.0648C4.95 17.4724 5.3757 16.9757 5.94495 16.8927C9.7097 16.3427 12.3019 16.39 16.0716 16.912C16.3444 16.9519 16.5937 17.089 16.7734 17.2981C16.9532 17.5072 17.0514 17.7741 17.05 18.0499C17.05 18.3139 16.9592 18.5702 16.7953 18.7704C16.6263 18.9761 16.46 19.1745 16.2965 19.3655ZM18.1418 17.8563C18.0538 16.8267 17.2722 15.9676 16.2222 15.8224C12.3635 15.2884 9.66625 15.2372 5.786 15.8043C4.73 15.9583 3.95175 16.8251 3.85935 17.8574C2.08578 16.0155 1.0965 13.557 1.1 11C1.1 5.53245 5.53245 1.1 11 1.1C16.4676 1.1 20.9 5.53245 20.9 11C20.9035 13.5565 19.9147 16.0145 18.1418 17.8563Z"
+                                fill="#FAFBFF" />
+                        </svg>
+                        Log out
+                    </button>
+                </li>
+                <li id="cart">
+                    <a href="cart.htm">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="19" viewBox="0 0 22 19" fill="none">
+                            <path
+                                d="M14.3332 0.50008L17.6664 6.22725M4.33359 6.22725L7.6668 0.50008M19.7997 6.22725H2.20034C1.95038 6.22228 1.70249 6.27259 1.47502 6.37445C1.24755 6.47631 1.04634 6.62711 0.886283 6.81569C0.72623 7.00426 0.611438 7.22578 0.550412 7.46382C0.489386 7.70187 0.483689 7.95035 0.533742 8.19085L2.367 17.1907C2.44492 17.5659 2.65437 17.9023 2.95888 18.1415C3.2634 18.3807 3.64371 18.5075 4.03361 18.4997H17.9664C18.3563 18.5075 18.7366 18.3807 19.0411 18.1415C19.3456 17.9023 19.5551 17.5659 19.633 17.1907L21.4663 8.19085C21.5163 7.95035 21.5106 7.70187 21.4496 7.46382C21.3886 7.22578 21.2738 7.00426 21.1137 6.81569C20.9537 6.62711 20.7524 6.47631 20.525 6.37445C20.2975 6.27259 20.0496 6.22228 19.7997 6.22725Z"
+                                stroke="#FAFBFF" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        Cart
+                    </a>
+                </li>
+            </ul>
+            <!-- <button id="burgerMenu">
+                                <img src="images/burger_icon.svg" alt="Burger icon" class="menuIcon" aria-label="Open menu">
+                                <img src="images/close_icon.svg" alt="Close icon" class="closeIcon" aria-label="Close menu">
+                            </button> -->
+        </nav>
+    </header>
+    <main>
+        <header>
+            <h1>Log in</h1>
+        </header>
+        <form id="frmLogin">
+            <div>
+                <label for="txtEmail">E-mail</label>
+                <input type="email" id="txtEmail" required>
+            </div>
+            <div>
+                <label for="txtPassword">Password</label>
+                <input type="password" id="txtPassword" minlength="8" maxlength="20" required>
+            </div>
+            <p>Don't have a user? <a href="signup.htm">Sign up</a></p>
+            <div>
+                <button type="submit">Log in</button>
+            </div>
+        </form>
+    </main>
+    <footer>
+        <section id="paymentOptions">
+            <p>Payment Options</p>
+            <div>
+                <img src="images/mastercard.svg" alt="Mastercard">
+                <img src="images/visa.svg" alt="Visa card">
+                <img src="images/paypal.svg" alt="Paypal">
+            </div>
+        </section>
+        <section id="helpInformation">
+            <p>Help and Information</p>
+            <div class="textLinks">
+                <a href="#">Help</a>
+                <a href="#">Track order</a>
+                <a href="#">Delivery and Returns</a>
+            </div>
+        </section>
+        <section id="privacy">
+            <p>Privacy and Cookies</p>
+            <div class="textLinks">
+                <a href="#">Cookie policy</a>
+                <a href="#">Privacy policy</a>
+            </div>
+        </section>
+        <section id="soMe">
+            <p>Social Media</p>
+            <div>
+                <a href="#"><img src="images/facebook.svg" alt="Nova Market at Facebook"></a>
+                <a href="#"><img src="images/instagram.svg" alt="Nova Market at Instagram"></a>
+                <a href="#"><img src="images/tiktok.svg" alt="Nova Market at TikTok"></a>
+            </div>
+        </section>
+    </footer>
+    <dialog id="mdlInfo">
+        <header>
+            <h1></h1>
+            <button class="close" type="button">&times;</button>
+        </header>
+        <p></p>
+    </dialog>
+</body>
