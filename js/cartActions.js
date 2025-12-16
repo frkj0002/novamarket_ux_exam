@@ -2,8 +2,10 @@ import { LOCAL_STORAGE_USER_EMAIL } from "./info.js";
 
 export const addToCart = (productID) => {
     const userEmail = localStorage.getItem(LOCAL_STORAGE_USER_EMAIL);
+
     const carts = JSON.parse(localStorage.getItem('carts')) ?? {};
     const userCart = carts[userEmail] ?? [];
+
     const exisistingProduct = userCart.find(item => item.id == productID);
     if (exisistingProduct) {
         exisistingProduct.quantity++;

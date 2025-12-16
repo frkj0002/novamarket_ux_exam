@@ -59,11 +59,8 @@
                     </a>
                 </li>
             </ul>
-            <!-- <button id="burgerMenu">
-                            <img src="images/burger_icon.svg" alt="Burger icon" class="menuIcon" aria-label="Open menu">
-                            <img src="images/close_icon.svg" alt="Close icon" class="closeIcon" aria-label="Close menu">
-                        </button> -->
         </nav>
+        <p id="user"></p>
     </header>
     <main>
         <header>
@@ -72,16 +69,17 @@
         <form id="frmSignup">
             <div>
                 <label for="txtEmail">E-mail</label>
-                <input type="email" id="txtEmail" required>
+                <input type="email" id="txtEmail" placeholder="Write email" required>
             </div>
             <div>
                 <label for="txtPassword">Password</label>
                 <input type="password" id="txtPassword" minlength="8" maxlength="20"
-                    pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).+" required>
+                    pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).+" placeholder="Create password" required>
             </div>
             <div>
                 <label for="txtRepeatPassword">Repeat password</label>
-                <input type="password" id="txtRepeatPassword" required>
+                <input type="password" id="txtRepeatPassword"
+                    pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).+" placeholder="Repeat password" required>
             </div>
             <p>Have a user already? <a href="login.htm">Log in</a></p>
             <div>

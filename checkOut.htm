@@ -24,7 +24,6 @@
                 <li id="electronics" class="menuItem"><a href="index.html" title="Electronics">Electronics</a></li>
             </ul>
             <ul id="utilityNavigation" aria-label="Utility navigation">
-                <p id="user"></p>
                 <li id="login">
                     <a href="login.htm" title="Log in">
                         <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
@@ -62,11 +61,8 @@
                     </a>
                 </li>
             </ul>
-            <!-- <button id="burgerMenu">
-                        <img src="images/burger_icon.svg" alt="Burger icon" class="menuIcon" aria-label="Open menu">
-                        <img src="images/close_icon.svg" alt="Close icon" class="closeIcon" aria-label="Close menu">
-                    </button> -->
         </nav>
+        <p id="user"></p>
     </header>
     <main>
         <header>
@@ -77,21 +73,24 @@
                 <legend>Delivery address</legend>
                 <div>
                     <label for="txtDeliveryAddress">Full address</label>
-                    <input type="text" id="txtDeliveryAddress" name="delivery_address" required>
+                    <input type="text" id="txtDeliveryAddress" name="delivery_address"
+                        placeholder="Write delivery address" required>
                 </div>
             </fieldset>
             <fieldset>
                 <legend>Billing address</legend>
                 <div>
                     <label for="txtBillingAddress">Full address</label>
-                    <input type="text" id="txtBillingAddress" name="billing_address" required>
+                    <input type="text" id="txtBillingAddress" name="billing_address" placeholder="Write billing address"
+                        required>
                 </div>
             </fieldset>
             <fieldset>
                 <legend>Payment details</legend>
                 <div>
                     <label for="txtCardNumber">Credit card number</label>
-                    <input type="text" pattern="\d{14,16}" id="txtCardNumber" name="card_number" inputmode="numeric" required>
+                    <input type="text" pattern="\d{14,16}" id="txtCardNumber" name="card_number" inputmode="numeric"
+                        placeholder="Write credit card number" required>
                 </div>
             </fieldset>
             <button type="submit" id="btnConfirmOrder" class="primaryButton">Confirm order</button>

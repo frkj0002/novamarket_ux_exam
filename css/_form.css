@@ -18,6 +18,13 @@ form {
             height: 35px;
             border-radius: 0.6rem;
             border: solid 1px var(--colourTxtDark);
+            padding-left: 0.5rem;
+        }
+        input:invalid:not(:placeholder-shown) {
+            border: solid 2px var(--colourError);
+        }
+        input:valid {
+            border: solid 2px var(--colourSuccess);
         }
         button {
             border: none;

@@ -16,6 +16,8 @@
     --colourBgCard: #ECF0FF;
     --colourBoxShadow: #13131C1E;
     --colourCTA: #F6B429;
+    --colourError: #b31d35;
+    --colourSuccess: #4e6d1e;
 
     /* Sizes */
     --widthPaymentIcons: 45px;

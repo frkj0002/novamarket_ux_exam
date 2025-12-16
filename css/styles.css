@@ -62,6 +62,8 @@ body {
                     display: flex;
                     flex-direction: column;
                     align-items: center;
+                    font-family: var(--fontMain);
+                    font-size: 1.2rem;
                 }
                 li > button {
                     border: none;
@@ -72,6 +74,13 @@ body {
                 }
             }
         }
+        #user {
+            color: var(--colourTxtLight);
+            align-self: center;
+            @media (min-width: 768px) {
+                align-self: end;
+            }
+        }
     }
 
     main {
@@ -80,7 +89,7 @@ body {
         background-image: url("/images/products_bg_image.jpg");
         background-repeat: no-repeat;
         background-size: cover;
-        padding: 7rem 0;
+        padding: 5rem 0;
         background-color: rgba(0,0,0,0.5);
         background-blend-mode: darken;
         > h1 {
@@ -88,7 +97,6 @@ body {
             color: var(--colourTxtLight);
             text-align: center;
             text-transform: uppercase;
-            font-size: clamp(2rem, 5vw, 3.5rem);
             }
         @media (min-width: 768px) {
             max-height: var(--heroImgMaxHeight);
@@ -154,37 +162,7 @@ body {
             }
         }
     }
-        /* @media (max-width: 599px) {
-                nav {
-                    position: fixed;
-                    transform: translateY(-100%);
-                    transition: transform 0.2s;
-                    top: 0;
-                    left: 0;
-                    right: 0;
-                    bottom: 0;
-                    z-index: 99;
-                    background: black;
-                    color: white;
-                    list-style: none;
-                    padding-top: 4rem;
-
-                    button#burgerMenu {
-                        position: fixed;
-                        z-index: 100;
-                        padding: 2rem;
-                        border: none;
-                        background: none;
-                        cursor: pointer;
-
-                        .closeIcon {
-                            display: none;
-                        }
-                    }
-                }
-                
-            } */
-    }
+}
 
 
 .hidden {
@@ -200,9 +178,6 @@ p {
     font-family: var(--fontMain);
 }
 
-.showMenu {
-    transform: translateY(0);
-}
 
 .productCategory {
     text-transform: capitalize;
@@ -231,4 +206,8 @@ p {
     border-radius: 0.6rem;
     font-family: var(--fontMain);
     font-weight: 600;
+}
+
+.selected {
+    text-decoration: underline;
 }

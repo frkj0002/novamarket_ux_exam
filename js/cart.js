@@ -1,21 +1,27 @@
 import { BASE_URL } from "./info.js";
 import { LOCAL_STORAGE_USER_EMAIL } from "./info.js";
 import { removeFromCart } from "./cartActions.js";
+import { showModal } from "./modal.js";
 
 // Generate the Cart list over added products
 const showCartList = async () => {
     const userEmail = localStorage.getItem(LOCAL_STORAGE_USER_EMAIL);
-
-    let carts = {};
-    try {
-        carts = JSON.parse(localStorage.getItem('carts')) ?? {};
-    } catch {
-        carts = {};
+    const cartList = document.querySelector('#cartList');
+    const loginMessage = document.querySelector('#loginMessage');
+    const primaryButton = document.querySelector('.primaryButton');
+    const secondaryButton = document.querySelector('.secondaryButton');
+    if (!userEmail) {
+        loginMessage.classList.remove('hidden');
+        cartList.classList.add('hidden');
+        primaryButton.classList.add('hidden');
+        secondaryButton.classList.add('hidden');
+        return;
     }
+
+    const carts = JSON.parse(localStorage.getItem('carts')) ?? {};
     
     const userCart = carts[userEmail] ?? [];
 
-    const cartList = document.querySelector('#cartList');
     cartList.innerHTML = '';
 
     userCart.forEach(item => {
@@ -55,6 +61,11 @@ const cartProduct = (product, quantity) => {
 
 const calculateSubTotal = () => {
     const userEmail = localStorage.getItem(LOCAL_STORAGE_USER_EMAIL);
+    const orderTotalPrice = document.querySelector('#orderTotalPrice');
+    if (!userEmail) {
+        orderTotalPrice.classList.add('hidden');
+        return;
+    }
 
     const carts = JSON.parse(localStorage.getItem('carts')) ?? {};
     const userCart = carts[userEmail] ?? [];
@@ -74,5 +85,20 @@ const calculateSubTotal = () => {
 };
 
 calculateSubTotal();
+
+document.querySelector('.primaryButton').addEventListener('click', (e) => {
+    e.preventDefault();
+
+    const userEmail = localStorage.getItem(LOCAL_STORAGE_USER_EMAIL);
+    const carts = JSON.parse(localStorage.getItem('carts')) ?? {};
+    const userCart = carts[userEmail] ?? [];
+
+    if (userCart.length === 0) {
+        showModal('Cart is empty', 'You cannot check out because your cart is empty');
+        return;
+    }
+
+    window.location.href = 'checkOut.htm';
+});
 
 

@@ -1,5 +1,4 @@
 import { BASE_URL } from "./info.js";
-// import { addToCart } from "./cart.js";
 import { addToCart } from "./cartActions.js";
 
 const showProduct = (info) => {
@@ -20,9 +19,8 @@ const showProduct = (info) => {
     productInfo.querySelector('#productPrice > p').textContent = info.price + " USD";
 
     const btn = productInfo.querySelector('#btnAddToCart');
-    if (btn) {
-        btn.addEventListener('click', () => addToCart(info.id));
-    }
+    btn.addEventListener('click', () => addToCart(info.id));
+    
 };
 
 // Get the query string and parse it into an object

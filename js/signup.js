@@ -10,7 +10,7 @@ document.querySelector('#frmSignup').addEventListener('submit', (e) => {
 
     if (password !== repeatPassword) {
         showModal('Validation error', 'Both passwords must match');
-        return; // Validation failed - stop the function and do not continue the rest of the code!!
+        return;
     }
 
     const newUser = {
@@ -27,8 +27,7 @@ document.querySelector('#frmSignup').addEventListener('submit', (e) => {
     })
     .then(response => response.json())
     .then(data => { // eslint-disable-line no-unused-vars
-        showModal('Signed up successfully', 'Your user was created');
-        e.target.reset();
+        window.location.href = 'login.htm';
     })
     .catch(error => console.log(error));
 });

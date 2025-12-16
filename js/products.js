@@ -18,9 +18,9 @@ export const queryProducts = (categoryId) => {
     let url = BASE_URL;
 
     if(categoryId && categoryId !== 'products') {
-        const catName = categories[categoryId];
-        if(catName) {
-            url = `${BASE_URL}/category/${encodeURIComponent(catName)}`;
+        const categoryName = categories[categoryId];
+        if(categoryName) {
+            url = `${BASE_URL}/category/${encodeURIComponent(categoryName)}`;
         }
     }
 

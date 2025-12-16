@@ -6,13 +6,7 @@ document.querySelector('#frmCheckOut').addEventListener('submit', (e) => {
 
     const userEmail = localStorage.getItem(LOCAL_STORAGE_USER_EMAIL);
 
-    let carts = {};
-    try {
-        carts = JSON.parse(localStorage.getItem('carts')) ?? {};
-    } catch {
-        carts = {};
-    }
-
+    const carts = JSON.parse(localStorage.getItem('carts')) ?? {};
     delete carts[userEmail];
     localStorage.setItem('carts', JSON.stringify(carts));
 
