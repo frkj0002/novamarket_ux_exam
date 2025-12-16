@@ -1,5 +1,6 @@
 @import 'styles.css';
 @import '_form.css';
+@import '_dialog.css';
 
 main {
     padding: 1rem 2rem;

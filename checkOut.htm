@@ -91,7 +91,7 @@
                 <legend>Payment details</legend>
                 <div>
                     <label for="txtCardNumber">Credit card number</label>
-                    <input type="text" id="txtCardNumber" name="card_number" inputmode="numeric" required>
+                    <input type="text" pattern="\d{14,16}" id="txtCardNumber" name="card_number" inputmode="numeric" required>
                 </div>
             </fieldset>
             <button type="submit" id="btnConfirmOrder" class="primaryButton">Confirm order</button>

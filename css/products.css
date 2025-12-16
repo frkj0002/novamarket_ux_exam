@@ -5,28 +5,6 @@
 }
 
 main {
-    header#heroSection {
-        background-image: url("/images/products_bg_image.jpg");
-        background-repeat: no-repeat;
-        background-size: cover;
-        padding: 7rem 0;
-        background-color: rgba(0,0,0,0.5);
-        background-blend-mode: darken;
-        > h1 {
-            font-family: var(--fontHeader);
-            color: var(--colourTxtLight);
-            text-align: center;
-            text-transform: uppercase;
-            font-size: clamp(2rem, 5vw, 3.5rem);
-        }
-        @media (min-width: 768px) {
-            max-height: var(--heroImgMaxHeight);
-        }
-        @media (min-width: 1500px) {
-
-        }
-    }
-
     section#productList {
         padding: 1rem 2rem;
         display: grid;

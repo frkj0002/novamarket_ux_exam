@@ -1,0 +1,19 @@
+#mdlInfo{
+    padding: 2rem;
+    border-radius: 0.6rem;
+    border: solid 1px var(--colourTxtDark);
+
+    > header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+    
+    .close {
+        background: none;
+        padding: 0.5rem;
+        border-radius: 0.6rem;
+        border: solid 1px var(--colourTxtDark);
+    }
+}
