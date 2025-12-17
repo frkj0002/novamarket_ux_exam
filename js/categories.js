@@ -9,9 +9,9 @@ document.querySelectorAll('#mainNavigation li').forEach(item => {
         document.querySelector('#mainNavigation li.selected')?.classList.remove('selected');
         item.classList.add('selected');
 
-        const categoryId = item.id;
+        // const categoryId = item.id;
 
-        window.location.hash = categoryId;
+        // window.location.hash = categoryId;
         queryProducts(item.id);
     });
 });

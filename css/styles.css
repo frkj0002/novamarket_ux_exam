@@ -208,6 +208,6 @@ p {
     font-weight: 600;
 }
 
-.selected {
+#mainNavigation li.selected a {
     text-decoration: underline;
 }

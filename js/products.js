@@ -20,8 +20,11 @@ export const queryProducts = (categoryId) => {
     if(categoryId && categoryId !== 'products') {
         const categoryName = categories[categoryId];
         if(categoryName) {
-            url = `${BASE_URL}/category/${encodeURIComponent(categoryName)}`;
+            url = `${BASE_URL}/category/${categoryName}`;
         }
+        // if(categoryName) {
+        //     url = `${BASE_URL}/category/${encodeURIComponent(categoryName)}`;
+        // }
     }
 
     fetch(url)
