@@ -8,36 +8,28 @@ const categories = {
 };
 
 const productList = document.querySelector('#productList');
+const pageTitle = document.querySelector('#pageTitle');
 
 const assignLink = (anchor, url, text) => {
     anchor.href = url;
     anchor.title = text;
 };
 
-export const queryProducts = (categoryId) => {
+export const queryProducts = async (categoryId) => {
     let url = BASE_URL;
+    pageTitle.textContent = "Products";
 
-    if(categoryId && categoryId !== 'products') {
+    if (categoryId && categoryId !== 'products') {
         const categoryName = categories[categoryId];
-        if(categoryName) {
+        if (categoryName) {
             url = `${BASE_URL}/category/${categoryName}`;
+            pageTitle.textContent = categoryName;
         }
-        // if(categoryName) {
-        //     url = `${BASE_URL}/category/${encodeURIComponent(categoryName)}`;
-        // }
     }
 
-    fetch(url)
-        .then(response => {
-            if(response.ok) {
-                return response.json();
-            } else {
-                console.error(`Response error: ${response.status} - ${response.statusText}`);
-            }
-        })
-        .then(data => {
-            if(data) showProducts(data);
-        })
+    await fetch(url)
+        .then(res => res.json())
+        .then(data => showProducts(data))
         .catch(err => console.error(err));
 };
 
