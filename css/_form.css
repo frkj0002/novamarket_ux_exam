@@ -12,7 +12,6 @@ form {
 
         label {
             font-family: var(--fontMain);
-            /* font-size: 1rem; */
         }
         input {
             height: 35px;

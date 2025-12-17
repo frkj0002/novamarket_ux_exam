@@ -34,7 +34,6 @@ const showCartList = async () => {
     });
 };
 showCartList();
-// document.addEventListener('DOMContentLoaded', showCartList);
 
 // Generate each cart product card to the list above
 const cartProduct = (product, quantity) => {
@@ -51,7 +50,6 @@ const cartProduct = (product, quantity) => {
     productCard.querySelector('.productQuantity').innerText = `Quantity: ${quantity}`;
 
     productCard.querySelector('#btnRemoveFromCart').addEventListener('click', function () {
-        // const productID = this.closest('article').dataset.id;
         removeFromCart(product.id);
         this.closest('article').remove();
     });
