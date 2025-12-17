@@ -8,6 +8,8 @@
 
 body {
     background-color: var(--colourBgBody);
+    max-width: var(--maxWidth);
+    margin: 0 auto;
     header#header {
         background-color: var(--colourBgNav);
         display: flex;
@@ -86,7 +88,10 @@ body {
     main {
         background-color: var(--colourBgBody);
         header#heroSection {
-        background-image: url("/images/products_bg_image.jpg");
+        background-image: url("/images/products_bg_image_small.jpg");
+        @media (min-width: 768px) {
+            background-image: url("/images/products_bg_image_big.jpg");
+        }
         background-repeat: no-repeat;
         background-size: cover;
         padding: 5rem 0;
@@ -100,8 +105,6 @@ body {
             }
         @media (min-width: 768px) {
             max-height: var(--heroImgMaxHeight);
-            }
-        @media (min-width: 1500px) {
             }
         }
     }
